@@ -20,7 +20,7 @@ const Home = () => {
             try {
 
                 setLoding(true)
-                const response = await axios.get("http://localhost:3000/todo/gettodos",{
+                const response = await axios.get("https://full-stack-todo-app-backend-30vb.onrender.com/todo/gettodos",{
                     withCredentials:true,
                     headers:{"Content-Type": "application/json"}
                 })
@@ -43,7 +43,7 @@ const Home = () => {
     const todoCreate = async() =>{
         if(!newTodo) return
         try {
-            const response = await axios.post("http://localhost:3000/todo/create",{
+            const response = await axios.post("https://full-stack-todo-app-backend-30vb.onrender.com/todo/create",{
                 text:newTodo,
                 completed:false
             },{
@@ -61,7 +61,7 @@ const Home = () => {
 
         const todo = todos.find((t)=>t._id === id)
         try {
-            const response = await axios.post(`http://localhost:3000/todo/update/${id}`,{
+            const response = await axios.post(`https://full-stack-todo-app-backend-30vb.onrender.com/todo/update/${id}`,{
                 ...todo,
                 completed:!todo.completed
             },{
@@ -76,7 +76,7 @@ const Home = () => {
 
     const todoDelete = async(id) =>{
         try {
-            await axios.delete(`http://localhost:3000/todo/delete/${id}`,{
+            await axios.delete(`https://full-stack-todo-app-backend-30vb.onrender.com/todo/delete/${id}`,{
                 withCredentials:true
             })
 
@@ -90,7 +90,7 @@ const Home = () => {
     const logout = async(req,res)=>{
         try {
 
-            await axios.get("http://localhost:3000/user/logout", {
+            await axios.get("https://full-stack-todo-app-backend-30vb.onrender.com/user/logout", {
                 withCredentials: true
             })
             toast.success("Logout Successfully")
