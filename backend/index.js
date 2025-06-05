@@ -13,12 +13,14 @@ const app = express()
 // MIDDLEWARE
 app.use(express.json())
 app.use(cookieParser())
-app.use(cors({
-    origin:process.env.FRONTEND_URI,
-    credentials:true,
-    methods:"GET,POST,PUT,DELETE",
-    allowedHeaders:["Content-Type", "Authorization"]
-}))
+// app.use(cors({
+//     origin:process.env.FRONTEND_URI,
+//     credentials:true,
+//     methods:"GET,POST,PUT,DELETE",
+//     allowedHeaders:["Content-Type", "Authorization"]
+// }))
+
+app.use(cors())
 
 
 // DATABASE CONNECTION INFO
