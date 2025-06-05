@@ -16,7 +16,7 @@ const Signup = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:3000/user/signup",
+        "https://full-stack-todo-app-backend-30vb.onrender.com/user/signup",
         {
           username,
           email,
